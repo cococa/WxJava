@@ -432,7 +432,7 @@ public class WxOpenMaServiceImpl extends WxMaServiceImpl implements WxOpenMaServ
 
   @Override
   public WxOpenVersioninfoResult getVersioninfo() throws WxErrorException {
-    String response = get(API_WX_GET_VERSION_INFO, null);
+    String response = post(API_WX_GET_VERSION_INFO, "{}");
     return WxMaGsonBuilder.create().fromJson(response, WxOpenVersioninfoResult.class);
   }
 
