@@ -53,5 +53,4 @@ public class WxOpenMaSubmitAuditMessage implements Serializable {
    */
   @SerializedName("privacy_api_not_use")
   private Boolean privacyApiNotUse;
-
 }
