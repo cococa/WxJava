@@ -189,8 +189,8 @@ public class WxCpTpUserServiceImpl implements WxCpTpUserService {
   public String getUserId(String mobile, String corpId) throws WxErrorException {
     JsonObject jsonObject = new JsonObject();
     jsonObject.addProperty("mobile", mobile);
-    String url = mainService.getWxCpTpConfigStorage().getApiUrl(GET_USER_ID);
-    url += "?access_token=" + mainService.getWxCpTpConfigStorage().getAccessToken(corpId);
+    String url = mainService.getWxCpTpConfigStorage().getApiUrl(GET_USER_ID)
+    + "?access_token=" + mainService.getWxCpTpConfigStorage().getAccessToken(corpId);
     String responseContent = this.mainService.post(url, jsonObject.toString());
     JsonObject tmpJsonElement = GsonParser.parse(responseContent);
     return tmpJsonElement.getAsJsonObject().get("userid").getAsString();
