@@ -57,6 +57,7 @@ public abstract class BaseWxCpTpServiceImpl<H, P> implements WxCpTpService, Requ
   private WxCpTpOrderService wxCpTpOrderService = new WxCpTpOrderServiceImpl(this);
   private WxCpTpEditionService wxCpTpEditionService = new WxCpTpEditionServiceImpl(this);
   private WxCpTpLicenseService wxCpTpLicenseService = new WxCpTpLicenseServiceImpl(this);
+  private WxCpTpIdConverService wxCpTpIdConverService = new WxCpTpIdConverServiceImpl(this);
 
   /**
    * 全局的是否正在刷新access token的锁.
@@ -724,5 +725,17 @@ public abstract class BaseWxCpTpServiceImpl<H, P> implements WxCpTpService, Requ
 
     return jsapiSignature;
   }
+
+  @Override
+  public WxCpTpIdConverService getWxCpTpIdConverService() {
+    return wxCpTpIdConverService;
+  }
+
+  @Override
+  public void setWxCpTpIdConverService(WxCpTpIdConverService wxCpTpIdConverService) {
+    this.wxCpTpIdConverService = wxCpTpIdConverService;
+  }
+
+
 
 }
